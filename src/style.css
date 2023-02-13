@@ -121,7 +121,7 @@ body{
 }
 
 .navItems, .workItems{
-  width: 20rem;
+  width: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,8 +129,13 @@ body{
   color: var(--white);
 }
 
+.active{
+  transition: .5s;
+  color: var(--accent);
+}
+
 .workItems{
-  width: 50rem;
+  width: 45rem;
   font-size: 3.2rem;
 }
 
@@ -138,7 +143,7 @@ body{
   padding: 1rem 2.5rem;
 }
 
-.navItems p::after , .workItems p::after{
+.navItems p::after{
   content: "";
   width: 100%;
   height: 2px;
@@ -150,7 +155,7 @@ body{
   border-radius: 1.5px;
 }
 
-.navItems p::after, .workItems p::after{
+.navItems p::after{
   -webkit-transform: scale(0);
           transform: scale(0);
   -webkit-transition: -webkit-transform 0.5s ease;
@@ -159,7 +164,7 @@ body{
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
-.navItems p:hover::after, .workItems p:hover::after{
+.navItems p:hover::after{
   -webkit-transform: scale(1);
           transform: scale(1);
 }
@@ -472,9 +477,7 @@ body{
     
     body{
       overflow-x: hidden;
-      filter: blur(10px);
-      -webkit-filter: blur(10px);
-      -moz-backface-visibility: 10px;
+
     }
 
   /* Navbar */
@@ -499,7 +502,7 @@ body{
 
   .navBar i{
     opacity: 1;
-    position: absolute;
+    position: fixed;
     right: 2rem;
     top: 2.5rem;
   }
@@ -540,8 +543,8 @@ body{
   }
 
   .heroSocial{
-    width: 25rem;
-    font-size: 4.8rem;
+    width: 30rem;
+    font-size: 5.6rem;
   }
 
   .heroSocial i{
@@ -557,7 +560,7 @@ body{
   /* Projects */
 
   .workBar{
-    font-size: 3.2rem;
+    font-size: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -566,8 +569,8 @@ body{
   }
 
   .workItems{
-    font-size: 2.4rem;
-    width: 26rem;
+    font-size: 2.8rem;
+    width: 30rem;
     justify-content: space-between;
   }
 
@@ -576,7 +579,7 @@ body{
   }
 
   .projectList{
-    height: 100rem;
+    height: 110rem;
   }
   
   .project{
@@ -596,16 +599,16 @@ body{
   }
 
   .projectImg{
-    width: 30rem;
-    height: 20rem;
+    width: 100vw;
+    height: 25rem;
     margin-left: -2rem;
   }
 
   /* About */
 
   .aboutText{
-    width: 28rem;
-    font-size: 2rem;
+    width: calc(100vw - 2rem);
+    font-size: 2.4rem;
   }
 
   .aboutDesc{
@@ -614,12 +617,12 @@ body{
   }
 
   .aboutPos, .companyLink{
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 
   .aboutDescSkills{
     margin: 5rem 0rem 0rem -2rem;
-    width: 30rem;
+    width: 100vw;
     height: 100rem;
     display: flex;
     flex-direction: column;
@@ -634,7 +637,7 @@ body{
   }
 
   .skill{
-    width: 20rem;
+    width: 26rem;
     font-size: 3.2rem;
     padding: 2rem 1rem;  
   }
@@ -651,18 +654,25 @@ body{
 
   .contact{
     margin-top: 20rem;
-    width: 26rem;
+    width: calc(100vw - 2rem);
     border-radius: 2rem;
     padding: 2rem;
   }
 
   .contactName{
-    margin-top: 10rem;
-    width: 22.5rem;
+    margin-top: 20rem;
+    width: 30rem;
+  }
+
+  .contactText{
+    width: 100%;
+    font-size: 3.2rem;
+    margin-left: 2rem;
   }
 
   .contactLink{
     width: 35rem;
+    margin-left: 5rem;
   }
 
   .contactLink i{
@@ -676,7 +686,7 @@ body{
 
   .socialLinks{
     flex-direction: column;
-    width: 22.5rem;
+    width: calc(100vw - 5rem);
     height: 35rem;
     align-items: center;
   }
@@ -686,16 +696,16 @@ body{
   .footerNav{
     display: flex;
     justify-content: center;
-    width: 25rem;
+    width: 100vw;
   }
 
   .footerLine{
-    width: 25rem;
+    width: calc(100vw - 2rem);
   }
 
   .endSec{
     flex-direction: column-reverse;
-    width: 25rem;
+    width: calc(100vw - 2rem);
     height: 7.5rem;
   }
 }

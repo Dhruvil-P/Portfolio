@@ -1,5 +1,6 @@
 import Logo from "../assets/Logo.svg"
 import Profile from "../assets/Profile.svg"
+import { useState } from "react";
 
 export default function Hero() {
     return (
