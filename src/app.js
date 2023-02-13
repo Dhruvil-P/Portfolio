@@ -118,5 +118,49 @@ window.onload = function(){
       behavior: "smooth"
     });
   });
+
+// Mobile Nav
+
+const menuPanel = document.querySelector(".menuPanel");
+const menuIcon = document.querySelector(".menu");
+const closeIcon = document.querySelector(".close");
+const navItems = document.querySelector(".navItems");
+
+closeIcon.classList.add("hidden");
+
+let isMenuOpen = false;
+
+menuIcon.addEventListener("click", ()=>{
+
+  isMenuOpen = true;
+  menuPanel.style.top = "0";
+  navItems.style.top = "5rem";
   
-  };
+  if(isMenuOpen){
+    menuIcon.classList.add("hidden");
+    closeIcon.classList.add("visible");
+  }
+  else{
+    menuIcon.classList.remove("visible");
+    closeIcon.classList.add("hidden");
+  }
+})
+
+closeIcon.addEventListener("click", ()=>{
+
+  isMenuOpen = false;
+  menuPanel.style.top = "-90rem";
+  navItems.style.top = "-50rem";
+  
+  if(isMenuOpen){
+    menuIcon.classList.add("hidden");
+    closeIcon.classList.add("visible");
+  }
+  else{
+    menuIcon.classList.add("visible");
+    closeIcon.classList.add("hidden");
+    closeIcon.classList.remove("visible");
+  }
+})
+
+};

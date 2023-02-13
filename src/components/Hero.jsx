@@ -1,20 +1,20 @@
 import Logo from "../assets/Logo.svg"
 import Profile from "../assets/Profile.svg"
-import { useState } from "react";
 
 export default function Hero() {
     return (
         <section className="hero">
             <div className="navBar">
                 <img src={Logo} alt="My Logo" className="logo" />
-                <div className="menuPanel"></div>
-                <i class="fa-solid fa-bars menu"></i>
-                <i class="fa-solid fa-xmark close"></i>
+                <div className="menuPanel">
+                <i className="fa-solid fa-bars menu"></i>
+                <i className="fa-solid fa-xmark close"></i>
                 <div className="navItems">
                     <p className="navItemH">Home</p>
                     <p className="navItemP">Projects</p>
                     <p className="navItemA">About</p>
                     <p className="navItemC">Contact</p>
+                </div>
                 </div>
             </div>
 

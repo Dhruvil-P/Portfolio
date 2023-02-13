@@ -3,7 +3,7 @@ export default function Project(props){
     const services = props.services;
 
     return (
-        <section className="project box">
+        <section className="project">
             <div className="projectDetail">
                 <p className="projectTitle">{props.title}</p>
                 <p className="projectServices">{
