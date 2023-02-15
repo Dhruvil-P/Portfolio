@@ -32,6 +32,7 @@ body{
 /* Custom Cursor */
 
 #cursor{
+  z-index: 50;
   position: absolute;
   top: 0;
   left: 0;
@@ -183,7 +184,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .heroName, .workName, .aboutName, .contactName{
@@ -250,19 +251,19 @@ body{
 .triOne{
   position: absolute;
   right: 65rem;
-  top: 45rem;
+  top: 50rem;
     width: 0;
     height: 0;
     border-left: 0px solid transparent;
-    border-right: 36.5rem solid transparent;
+    border-right: 40rem solid transparent;
     border-top: 25rem solid #053070;
     transform: rotate(180deg);
 }
 
 .mainRect{
-  z-index: -2;
+  z-index: -3;
   width: 65rem;
-  height: 70rem;
+  height: 75rem;
   background-color: #0087C9;
   position: absolute;
   top: 0;
@@ -270,23 +271,22 @@ body{
 }
 
 .triTwo{
-  z-index: -1;
+  z-index: -2;
   position: absolute;
   top: 0;
-  right: 0;
+  right: -10rem;
   width: 0;
   height: 0;
   border-left: 0px solid transparent;
-  border-right: 65rem solid transparent;
-  border-top: 45rem solid #053070;
+  border-right: 75rem solid transparent;
+  border-top: 50rem solid #053070;
 }
 
 .profileImg{
-  z-index: -3;
   position: absolute;
-  bottom: 0;
+  top: calc(100vh - 60rem);
   width: 100%;
-  height: 70rem;
+  height: 60rem;
 }
 
 /* Projects */
@@ -480,26 +480,32 @@ body{
     }
 
     .blur{
-      filter: blur(10px);
-      -webkit-filter: blur(10px);
-      -moz-backface-visibility: hidden;
+      backdrop-filter: blur(10px);
     }
 
+    .unscrollable{
+      overflow-y: hidden;
+    }
+
+    .scrollable{
+      overflow-y: scroll;
+    }
   /* Navbar */
 
   .logo{
-    z-index: 3;
+    z-index: 11;
   }
 
   .menuPanel{
-    position: absolute;
+    position: fixed;
     top: -90rem;
     left: 0;
-    width: 50rem;
+    width: 100%;
     height: 100vh;
     background-color: #0086c96f;
     opacity: 1;
     transition: .5s;
+    z-index: 10;
   }
 
   .hidden{
@@ -511,20 +517,26 @@ body{
   }
 
   .navBar{
+    width: 100%;
     align-items: start;
+    z-index: 11;
   }
 
   .navBar i{
-    z-index: 6;
-    opacity: 1;
+    z-index: 20;
     position: fixed;
-    right: 10rem;
-    top: 2.5rem;
+    opacity: 1;
+    right: 2.5rem;
+    top: 1.5rem;
+    font-size: 3.6rem;
+    background-color: #1B97FF;
+    padding: 1rem;
+    border-radius: 1rem;
   }
 
   .navItems{
-    width: 37.5rem;
-    height: 70rem;
+    width: 100%;
+    height: 100vh;
     flex-direction: column;
     font-size: 5.6rem;
     z-index: 2;
@@ -535,15 +547,6 @@ body{
   
   /* Hero */
 
-  .mainRect{
-    left: 0;
-    width: 50rem;
-  }
-
-  .triTwo{
-    border-right: 71rem solid transparent;
-  }
-
   .hero, .projects, .about, .contact, .footer{
     margin: 2rem;
   }
@@ -553,84 +556,92 @@ body{
   }
 
   .heroText{
-    margin-top: 70rem;
-  }
-
-  .heroName{
-    width: 25rem;
-  }
-
-  .heroSkills{
-    font-size: 4rem;
+    margin-top: 80vh;
   }
 
   .heroSocial{
-    width: 30rem;
-    font-size: 5.6rem;
+    font-size: 4.8rem;
+    width: 27.5rem;
   }
 
-  .heroSocial i{
-    padding-right: 1rem;
+  .triOne{
+    display: none;
+  }
+
+  .mainRect{
+    left: 0;
+    width: 100%;
+    height: 80vh;
+  }
+
+  .triTwo{
+    left: 0;
+    border-right: 55rem solid transparent;
+    border-top: 35rem solid #053070;
   }
 
   .profileImg{
-    left: -5rem;
-    bottom: -5rem;
-    width: 50rem;
+    height: 100vh;
   }
 
   /* Projects */
 
   .workBar{
-    font-size: 4rem;
-    display: flex;
+    width: 100%;
+    font-size: 3.2rem;
+    line-height: 100%;
     flex-direction: column;
-    justify-content: center;
     align-items: start;
-    margin-bottom: 2rem;
   }
 
   .workItems{
+    margin-top: 5rem;
+    width: calc(100vw);
     font-size: 2.8rem;
-    width: 30rem;
-    justify-content: space-between;
+    margin-bottom: 0rem;
+    justify-content: left;
   }
 
   .workItems p{
-    padding: 1rem 0rem;
+    padding: 1rem 1rem 1rem 0rem;
   }
 
   .projectList{
+    align-items: stretch;
     height: 120rem;
   }
-  
+
   .project{
+    width: 100vw;
     flex-direction: column-reverse;
-    align-items: start;
+    margin-bottom: 10rem;
   }
 
   .projectTitle{
-    width: 30rem;
-    font-size: 2.4rem;
-    letter-spacing: 0.2rem;
-    margin-top: 2rem;
+    font-size: 2.8rem;
+    letter-spacing: .5rem;
+    width: calc(100% - 2rem);
   }
 
   .projectServices{
-    width: 30rem;
+    font-size: 2rem;
   }
 
   .projectImg{
     width: 100vw;
-    height: 25rem;
-    margin-left: -2rem;
+    height: 30rem;
+    margin-bottom: 5rem;
   }
 
   /* About */
 
+  .about{
+    margin-top: 20rem;
+  }
+
   .aboutText{
-    width: calc(100vw - 2rem);
-    font-size: 2.4rem;
+    width: 100%;
+    font-size: 2rem;
   }
 
   .aboutDesc{
@@ -638,14 +649,22 @@ body{
     align-items: start;
   }
 
-  .aboutPos, .companyLink{
-    font-size: 2.4rem;
+  .aboutDescText{
+    margin-bottom: 5rem;
+  }
+
+  .aboutPos{
+    font-size: 2rem;
+  }
+
+  .aboutPos a{
+    font-size: 2rem;
   }
 
   .aboutDescSkills{
-    margin: 5rem 0rem 0rem -2rem;
-    width: calc(100vw + 2rem);
-    height: 100rem;
+    width: 100vw;
+    height: 75rem;
+    margin-left: -2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -654,80 +673,48 @@ body{
   .skills{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 
   .skill{
-    width: 26rem;
-    font-size: 3.2rem;
-    padding: 2rem 1rem;  
+    width: 25rem;
+    padding: 1rem;
   }
 
   .skill:nth-child(7), .skill:nth-child(8){
-    width: 26rem;
-  }
-
-  .skill:nth-child(8){
-    margin-left: 0rem;
+    width: 25rem;
+    margin-left: 0;
   }
 
   /* Contact */
 
   .contact{
     margin-top: 20rem;
-    width: calc(100vw - 2rem);
-    border-radius: 2rem;
     padding: 2rem;
   }
 
   .contactName{
     margin-top: 20rem;
-    width: 30rem;
   }
 
   .contactText{
-    width: 100%;
     font-size: 3.2rem;
-    margin-left: 2rem;
-  }
-
-  .contactLink{
-    width: 35rem;
-    margin-left: 5rem;
-  }
-
-  .contactLink i{
-    padding-right: 1rem;
   }
 
   .contactArt{
-    position: absolute;
-    width: 50rem;
+    left: 0rem;
+    width: 100vw;
   }
 
   .socialLinks{
     flex-direction: column;
-    width: calc(100vw - 5rem);
-    height: 35rem;
-    align-items: center;
+    align-items: start;
+    width: 100%;
+    height: 30rem;
   }
 
-  /* Footer */
-
-  .footerNav{
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-  }
-
-  .footerLine{
-    width: calc(100vw - 2rem);
-  }
-
-  .endSec{
-    flex-direction: column-reverse;
-    width: calc(100vw - 2rem);
-    height: 7.5rem;
+  .socials{
+    margin-left: -1rem;
   }
 }

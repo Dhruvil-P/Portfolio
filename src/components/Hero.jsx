@@ -6,9 +6,9 @@ export default function Hero() {
         <section className="hero">
             <div className="navBar">
                 <img src={Logo} alt="My Logo" className="logo" />
-                <div className="menuPanel">
                 <i className="fa-solid fa-bars menu"></i>
                 <i className="fa-solid fa-xmark close"></i>
+                <div className="menuPanel">
                 <div className="navItems">
                     <p className="navItemH">Home</p>
                     <p className="navItemP">Projects</p>
