@@ -264,13 +264,18 @@ closeIcon.addEventListener("click", ()=>{
     menuIcon.classList.add("hidden");
     closeIcon.classList.add("visible");
 
+    menuPanel.classList.add("blur");
+
     body.classList.add("unscrollable");
     body.classList.remove("scrollable");
+    
   }
   else{
     menuIcon.classList.add("visible");
     closeIcon.classList.add("hidden");
     closeIcon.classList.remove("visible");
+
+    menuPanel.classList.remove("blur");
 
     body.classList.add("scrollable");
     body.classList.remove("unscrollable");

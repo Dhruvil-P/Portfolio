@@ -37,10 +37,8 @@ export default function Hero() {
 
             <div className="heroArt">
                 <div className="triOne"></div>
-                <div className="mainRect">
                     <div className="triTwo"></div>
                     <img className="profileImg" src={Profile} alt="Profile"/>
-                </div>
             </div>
         </section>
     )
